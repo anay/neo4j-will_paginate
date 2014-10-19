@@ -41,13 +41,14 @@ module Neo4j
 end
 
 [
-  Neo4j::Core::Traversal::Traverser,
-  Neo4j::Core::Index::LuceneQuery,
-  Neo4j::Cypher::ResultWrapper,
-  Neo4j::Core::Traversal::CypherQuery,
-  Neo4j::Wrapper::HasN::Nodes,
-  Neo4j::Rails::Relationships::NodesDSL,
-  Neo4j::Rails::Relationships::RelsDSL
+  Neo4j::ActiveNode::Query::QueryProxy
+  #Neo4j::Core::Traversal::Traverser,
+  #Neo4j::Core::Index::LuceneQuery,
+  #Neo4j::Cypher::ResultWrapper,
+  #Neo4j::Core::Traversal::CypherQuery,
+  #Neo4j::Wrapper::HasN::Nodes,
+  #Neo4j::Rails::Relationships::NodesDSL,
+  #Neo4j::Rails::Relationships::RelsDSL
 ].each do |m|
   m.send :include, Neo4j::WillPaginate::Pagination
 end
